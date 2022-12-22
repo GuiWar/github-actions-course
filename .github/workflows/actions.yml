@@ -6,7 +6,6 @@ on:
     types:
       - "closed"
       - "assigned"
-      - "unassigned"
       - "opened"
       - "reopened"
 
