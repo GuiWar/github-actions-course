@@ -5,12 +5,8 @@ on:
   schedule:
     - cron: "*/2 * * * *"
   pull_request:
-    types:
-      - "assigned"
-      - "closed"
-      - "opened"
-      - "reopened"
-
+    types: [closed, assigned, opened, reopened]
+    
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
