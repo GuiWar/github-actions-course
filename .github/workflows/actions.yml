@@ -3,7 +3,7 @@ name: Actions Workflow
 
 on:
   schedule:
-    - cron: "0/2 * * * *"
+    - cron: "40-59 * * * *"
   pull_request:
     types:
       - "assigned"
