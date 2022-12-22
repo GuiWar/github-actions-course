@@ -10,9 +10,13 @@ jobs:
         run: |
           pwd
           ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "{{ girhub.token}}""
       - name: checkout
         uses: actions/checkout@v1
-      - name: List Files
+      - name: List After checkout Files
         run: |
           pwd
           ls -a
