@@ -2,8 +2,10 @@ name: Actions Workflow
 
 on:
   push:
-    branches:
+    branches-ignore:
       - master
+      - 'feature/*'
+      - 'feature/**'
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
