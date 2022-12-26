@@ -22,6 +22,7 @@ jobs:
       - name: Assign issue to user
         uses: pozil/auto-assign-issue@v1
         with:
+          repo-token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
           assignees: ${{ github.actor }}
           numOfAssignee: 1
           allowSelfAssign: true
