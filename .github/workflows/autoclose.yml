@@ -14,4 +14,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_URL: https://github.com/GuiWar/github-actions-course/issues/44
         run: |
-          gh issue edit https://github.com/GuiWar/github-actions-course/issues/44 --add-label "invalid"
+          gh issue edit https://github.com/GuiWar/github-actions-course/issues/44 --add-assignee "@me"
