@@ -10,7 +10,7 @@ jobs:
       - name: Create issue using rest APII
         run: |
           curl --request POST\
-          --url https://api.github.com/repos/${{ $GITHUB_REPOSITORY }}/isues \
+          --url https://api.github.com/repos/${{ $github.repository }}/isues \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'\
           --header 'content-type: application/json' \
           --data '{
