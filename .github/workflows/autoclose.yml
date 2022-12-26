@@ -1,7 +1,7 @@
 name: Auto Comment
 on:
-  issues:
-    - opened
+  issue_comment:
+    types: [created, deleted]
 jobs:
   run:
     runs-on: ubuntu-latest
