@@ -1,8 +1,8 @@
 name: Auto Comment
 on:
-  issues:
+  issue_comment:
     types:
-      - opened
+      - created
     
 
 jobs:
