@@ -1,20 +1,25 @@
 name: Auto Comment
-on:
-  issue_comment:
-    types: [created, deleted]
+on: issue_comment
+
 jobs:
-  run:
+  pr_commented:
+    # This job only runs for pull request comments
+    name: PR comment
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: wow-actions/auto-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesOpened: |
-            👋 @{{ author }}
-            Thank you for raising an issue. We will will investigate into the matter and get back to you as soon as possible.
-            Please make sure you have given us as much context as possible.
+      - run: |
+          echo A comment on PR $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
 
-          pullRequestOpened: |
-            👋 @{{ author }}
-            Thank you for raising your pull request.
-            Please make sure you have followed our contributing guidelines. We will review it as soon as possible
+  issue_commented:
+    # This job only runs for issue comments
+    name: Issue comment
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo A comment on issue $NUMBER
+        env:
+          NUMBER: ${{ github.event.issue.number }}
