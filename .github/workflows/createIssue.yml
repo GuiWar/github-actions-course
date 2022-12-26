@@ -25,6 +25,7 @@ jobs:
       - name: Assignation
         uses: pozil/auto-assign-issue@v1
         with:
+          repo-token: ${{ GITHUB_TOKEN }}
           assignees: ${{ github.actor }}
           numOfAssignee: 1
           allowSelfAssign: true
