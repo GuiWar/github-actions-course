@@ -2,6 +2,9 @@ name: Create issue on commit
 
 on: [ push ]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   create_issue:
     runs-on: ubuntu-latest
@@ -19,3 +22,9 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
             }' \
           --fail
+      - name: Assignation
+        uses: pozil/auto-assign-issue@v1
+        with:
+          assignees: ${{ github.actor }}
+          numOfAssignee: 1
+          allowSelfAssign: true
