@@ -10,7 +10,7 @@ jobs:
       - name: Dumb
         run: |
           echo ${{ contains ('hello', 'll') }}
-          echo ${{ startsWih( 'hello', 'he') }}
+          echo ${{ startsWith( 'hello', 'he') }}
           echo ${{ endsWith ( 'hello', 'lo') }}
           echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!')}}
           }}
