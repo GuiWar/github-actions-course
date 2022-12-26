@@ -1,5 +1,5 @@
 name: Auto Comment
-on: issue_comment
+on: [issues]
 
 jobs:
   pr_commented:
