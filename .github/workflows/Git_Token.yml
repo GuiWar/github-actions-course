@@ -1,4 +1,4 @@
-name: Pull Request Label
+name: Auth 
 
 on:
   push:
@@ -7,7 +7,7 @@ jobs:
   Create-auth:
     runs-on: ubuntu-latest
     steps:
-      - name: Create issue using rest API
+      - name: Create issue using rest APII
         run: |
           curl --request POST\
           --url https://api.github.com/repos/${{ $GITHUB_REPOSITORY }}/isues \
@@ -18,4 +18,3 @@ jobs:
             "body": "This issue was automatically create by the Github Action workflow **${{ githubworkflow }}**. \n\n
             The commit ash was: _${{ github.ha }}_."
             }'
-            
