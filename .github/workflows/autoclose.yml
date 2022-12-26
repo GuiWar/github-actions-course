@@ -12,6 +12,6 @@ jobs:
     steps:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_URL: https://github.com/GuiWar/github-actions-course/issues/44
         run: |
           gh issue edit $ISSUE_URL --add-label "triage"
