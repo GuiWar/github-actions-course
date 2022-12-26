@@ -1,0 +1,16 @@
+name: Use functions in expressions
+
+on:
+  push:
+    
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dumb
+        run: |
+          echo ${{ contains ('hello', 'll') }}
+          echo ${{ startsWih( 'hello', 'he') }}
+          echo ${{ endsWith ( 'hello', 'lo') }}
+          echo ${{ format('Hello {0} {1} {2}', 'World', '!', '!')}}
+          }}
