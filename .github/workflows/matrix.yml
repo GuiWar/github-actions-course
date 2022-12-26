@@ -5,10 +5,11 @@ jobs:
   node-version:
     strategy:
       matrix:
+        os: [macos-lates, ubuntu-latest, windows-latest]
         node_version: [6,8,10]
       max-parallel: 3
       fail-fast: true
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log node version
         run: node -v 
