@@ -2,7 +2,7 @@ name: Assign issue to contributor
 on: 
   issues:
     types:
-      - "opened"
+      - opened
 
 jobs:
   assign:
