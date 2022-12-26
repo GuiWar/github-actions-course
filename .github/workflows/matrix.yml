@@ -30,6 +30,4 @@ jobs:
       - name: log node version
         run: |
           node -v
-          - if: IS_UBUNTU_8 != "TRUE"
-              echo 'False'
           echo $IS_UBUNTU_8
