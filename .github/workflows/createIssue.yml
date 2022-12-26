@@ -22,10 +22,3 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
             }' \
           --fail
-      - name: Assignation
-        uses: pozil/auto-assign-issue@v1
-        with:
-          repo-token: ${ GITHUB_TOKEN }
-          assignees: ${{ github.actor }}
-          numOfAssignee: 1
-          allowSelfAssign: true
